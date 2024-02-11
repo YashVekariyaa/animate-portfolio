@@ -1,0 +1,76 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+
+.course {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+  }
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* This changes the actual scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background: transparent;
+  // border-radius: 10px;
+  transform: translateY(20px);
+}
+
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
